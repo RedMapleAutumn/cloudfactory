@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 public class test {
     public static void main(String[] args) {
         try {
@@ -31,9 +30,7 @@ public class test {
             }
             //还回到数据库连接池中
             connection.close();
-        } catch (PropertyVetoException e) {
-            e.printStackTrace();
-        } catch (SQLException e){
+        } catch (PropertyVetoException | SQLException e) {
             e.printStackTrace();
         }
     }
