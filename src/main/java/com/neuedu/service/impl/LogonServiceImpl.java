@@ -15,7 +15,7 @@ public class LogonServiceImpl implements LogonService {
         String s = userRepository.checkAccount(account);
         String result = "";
         if(s=="账号不重复"){
-            result = userRepository.agencylogon(account,password,name,tel,type);
+            int res = userRepository.agencylogon(account,password,name,tel,type);
         }else{
             result = s;
         }
@@ -28,7 +28,8 @@ public class LogonServiceImpl implements LogonService {
 
         String s = userRepository.checkAccount(account);
         String result = "";
-        String result_f = "";
+        int res = 0;
+        int result_f = 0;
         if(s=="账号不重复"){
             //确保工厂编号不重复
             String FNO = "";
@@ -39,7 +40,7 @@ public class LogonServiceImpl implements LogonService {
                 fno = factoryRepository.checkFNO(FNO);
             }
             //当账号和工厂编号都不重复时，执行插入操作
-            result = userRepository.factoryadminlogon(account,password,name,tel,type,factroyname,factoryintro,FNO);
+            res = userRepository.factoryadminlogon(account,password,name,tel,type,factroyname,factoryintro,FNO);
             result_f = factoryRepository.insert(FNO,factroyname,factoryintro,account);
         }else{
             result = s;

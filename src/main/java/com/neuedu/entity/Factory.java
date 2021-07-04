@@ -78,4 +78,17 @@ public class Factory {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Factory{" +
+                "FNO='" + FNO + '\'' +
+                ", fname='" + fname + '\'' +
+                ", description='" + description + '\'' +
+                ", account='" + account + '\'' +
+                ", adminName='" + adminName + '\'' +
+                ", tel='" + tel + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }

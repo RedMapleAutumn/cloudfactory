@@ -67,4 +67,16 @@ public class Admin {
     public void setDStatus(String DStatus) {
         this.DStatus = DStatus;
     }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "account='" + account + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", contact='" + contact + '\'' +
+                ", role='" + role + '\'' +
+                ", DStatus='" + DStatus + '\'' +
+                '}';
+    }
 }

@@ -47,4 +47,13 @@ public class FactoryAdmin extends Admin{
     public void setFactoryIntro(String factoryIntro) {
         this.factoryIntro = factoryIntro;
     }
+
+    @Override
+    public String toString() {
+        return "FactoryAdmin{" +
+                "FNO='" + FNO + '\'' +
+                ", factoryName='" + factoryName + '\'' +
+                ", factoryIntro='" + factoryIntro + '\'' +
+                '}';
+    }
 }

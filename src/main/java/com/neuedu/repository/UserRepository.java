@@ -1,26 +1,30 @@
 package com.neuedu.repository;
 
 import com.neuedu.entity.Admin;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface UserRepository {
-    public Admin login(String username,String password);
+    public Admin login(@Param("username") String username, @Param("password") String password);
 
-    public String checkAccount(String account);
+    public String checkAccount(@Param("account") String account);
 
-    public String agencylogon(String account, String password, String name, String tel, String type);
+    public int agencylogon(@Param("account") String account, @Param("password") String password,
+                              @Param("name") String name, @Param("tel") String tel,@Param("type") String type);
 
-    public String factoryadminlogon(String account, String password, String name, String tel, String type,
-                                    String factroyname, String factoryintro,String FNO);
+    public int factoryadminlogon(@Param("account") String account, @Param("password") String password,
+                                    @Param("name") String name, @Param("tel") String tel,@Param("type") String type,
+                                    @Param("fname") String factroyname, @Param("fintro") String factoryintro,
+                                    @Param("FNO") String FNO);
 
     public List<Admin> findAll();
 
-    public List<Admin> findAllByUsername(String username);
+    public List<Admin> findAllByUsername(@Param("username") String username);
 
-    public Admin findByAccount(String account);
+    public Admin findByAccount(@Param("account") String account);
 
-    public String updateUser(String name,String tel,String account);
+    public int updateUser(@Param("name") String name,@Param("tel") String tel,@Param("account") String account);
 
-    public String deleteUser(String account);
+    public int deleteUser(@Param("account") String account);
 }

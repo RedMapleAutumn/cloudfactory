@@ -55,6 +55,7 @@ public class ProductCategoryServlet extends HttpServlet {
                     req.getRequestDispatcher("productCategoryMana.jsp").forward(req,resp);
                 }
                 break;
+            default:break;
         }
     }
 }

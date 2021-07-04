@@ -38,7 +38,7 @@ public class FactoryRepositoryImpl implements FactoryRepository {
     }
 
     @Override
-    public String insert(String FNO, String Fname, String Fintro, String account) {
+    public int insert(String FNO, String Fname, String Fintro, String account) {
         Connection connection = JDBCTools.getConnection();
         String sql = "insert into factory(FNO,Fname,Fintro,FAccount) values (?,?,?,?) ";
         PreparedStatement preparedStatement = null;
@@ -56,7 +56,7 @@ public class FactoryRepositoryImpl implements FactoryRepository {
         }finally {
             JDBCTools.release(connection,preparedStatement,null);
         }
-        return result;
+        return 1;
     }
 
     @Override
@@ -138,7 +138,7 @@ public class FactoryRepositoryImpl implements FactoryRepository {
     }
 
     @Override
-    public String changeFactoryState(String FNO, String state) {
+    public int changeFactoryState(String FNO, String state) {
         Connection connection = JDBCTools.getConnection();
         String sql = "update factory set FState = ? where FNO = ?";
         PreparedStatement preparedStatement = null;
@@ -154,7 +154,7 @@ public class FactoryRepositoryImpl implements FactoryRepository {
         }finally {
             JDBCTools.release(connection,preparedStatement,null);
         }
-        return "更新成功";
+        return 1;
     }
 
 

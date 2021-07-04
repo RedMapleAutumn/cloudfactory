@@ -22,10 +22,10 @@ public class FactoryServiceImpl implements FactoryService {
     @Override
     public String changeFactoryState(String FNO,String state) {
         String s = factoryRepository.checkFNO(FNO);
-        String result = "";
+        int result = 0;
         if(s.equals("编号存在")){
             result = factoryRepository.changeFactoryState(FNO,state);
         }
-        return result;
+        return result+"";
     }
 }

@@ -63,7 +63,7 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
-    public String add(String PNO, String name, String PCNO, String size, String description) {
+    public int add(String PNO, String name, String PCNO, String size, String description) {
         Connection connection = JDBCTools.getConnection();
         String sql = "insert into product(PNO,PName,Pcno,PSize,PDes) values (?,?,?,?,?)";
         PreparedStatement preparedStatement = null;
@@ -82,6 +82,6 @@ public class ProductRepositoryImpl implements ProductRepository {
         }finally {
             JDBCTools.release(connection,preparedStatement,null);
         }
-        return result;
+        return 1;
     }
 }

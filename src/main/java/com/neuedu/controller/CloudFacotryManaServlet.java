@@ -34,17 +34,18 @@ public class CloudFacotryManaServlet extends HttpServlet {
             case "stop": //关停操作：将工厂状态设为0
                 String FNO = req.getParameter("FNO");
                 String result = factoryService.changeFactoryState(FNO,"0");
-                if(result.equals("更新成功")){
+                if(result.equals("1")){
                     resp.sendRedirect("/cloudFactory?method=findAll");
                 }
                 break;
             case "start":
                 String FNO2 = req.getParameter("FNO");
                 String result2 = factoryService.changeFactoryState(FNO2,"1");
-                if(result2.equals("更新成功")){
+                if(result2.equals("1")){
                     resp.sendRedirect("/cloudFactory?method=findAll");
                 }
                 break;
+            default:break;
         }
 
     }

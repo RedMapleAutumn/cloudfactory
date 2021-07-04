@@ -40,6 +40,8 @@ public class SuperAdminServlet extends HttpServlet {
                 String result = userMana.deleteUser(account);
                 resp.sendRedirect("/superAdmin?method=findAll");
                 break;
+            default:
+                break;
         }
 
     }
@@ -69,9 +71,11 @@ public class SuperAdminServlet extends HttpServlet {
                 String name = req.getParameter("username");
                 String tel = req.getParameter("contact");
                 String result = userMana.updateUser(name,tel,account);
-                if(result.equals("更新成功")){
+                if(result.equals("1")){
                     resp.sendRedirect("/superAdmin?method=findAll");
                 }
+                break;
+            default:
                 break;
         }
 

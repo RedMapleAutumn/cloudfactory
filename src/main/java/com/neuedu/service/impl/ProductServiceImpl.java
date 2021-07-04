@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService {
             PCNO = "PNO" + NumberTools.getNumber();
             s = productRepository.checkPNO(PNO);
         }
-        String result = productRepository.add(PNO,name,PCNO,size,description);
-        return result;
+        int result = productRepository.add(PNO,name,PCNO,size,description);
+        return result+"";
     }
 }

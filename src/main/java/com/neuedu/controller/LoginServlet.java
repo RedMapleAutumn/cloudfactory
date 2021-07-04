@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
             switch (type){
                 case "超级管理员":
                     httpSession.setAttribute("superAdmin",admin);
-                    resp.sendRedirect("superAdminHome.jsp");
+                    resp.sendRedirect("/superAdmin");
                     break;
                 case "经销商":
                     httpSession.setAttribute("agency",admin);
@@ -37,6 +37,8 @@ public class LoginServlet extends HttpServlet {
                     FactoryAdmin factoryAdmin = (FactoryAdmin)admin;
                     httpSession.setAttribute("factoryAdmin",factoryAdmin);
                     resp.sendRedirect("");
+                    break;
+                default:
                     break;
             }
         }else{

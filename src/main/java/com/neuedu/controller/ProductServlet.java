@@ -38,6 +38,7 @@ public class ProductServlet extends HttpServlet {
                 break;
             case "add":
                 break;
+            default:break;
         }
     }
 
@@ -66,6 +67,7 @@ public class ProductServlet extends HttpServlet {
                 description = req.getParameter("description");
                 resp.getWriter().write(pno+pname+category+size+description);
                 break;
+            default:break;
         }
 
     }

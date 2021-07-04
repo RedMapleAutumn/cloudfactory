@@ -53,6 +53,7 @@ public class UserRepositoryImpl implements UserRepository {
      * @param account 账号
      * @return 返回检测的状态
      */
+    @Override
     public String checkAccount(String account){
         Connection connection = JDBCTools.getConnection();
         String sql = "select * from user where Account = ? ";
@@ -85,7 +86,7 @@ public class UserRepositoryImpl implements UserRepository {
      * @return 返回数据库插入操作是否成功
      */
     @Override
-    public String agencylogon(String account, String password, String name, String tel, String type) {
+    public int agencylogon(String account, String password, String name, String tel, String type) {
         Connection connection = JDBCTools.getConnection();
         String sql = "insert into user(Account,Password,Name,Tel,Type) values (?,?,?,?,?) ";
         PreparedStatement preparedStatement = null;
@@ -104,7 +105,7 @@ public class UserRepositoryImpl implements UserRepository {
         }finally {
             JDBCTools.release(connection,preparedStatement,null);
         }
-        return result;
+        return 1;
     }
 
     /**将注册的云工厂管理员信息插入user表
@@ -119,7 +120,7 @@ public class UserRepositoryImpl implements UserRepository {
      * @return 数据库插入状态
      */
     @Override
-    public String factoryadminlogon(String account, String password, String name, String tel, String type, String factroyname, String factoryintro,String FNO) {
+    public int factoryadminlogon(String account, String password, String name, String tel, String type, String factroyname, String factoryintro,String FNO) {
         Connection connection = JDBCTools.getConnection();
         String sql = "insert into user(Account,Password,Name,Tel,Type,FNO) values (?,?,?,?,?,?) ";
         PreparedStatement preparedStatement = null;
@@ -139,7 +140,7 @@ public class UserRepositoryImpl implements UserRepository {
         }finally {
             JDBCTools.release(connection,preparedStatement,null);
         }
-        return result;
+        return 1;
     }
 
     @Override
@@ -216,7 +217,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public String updateUser(String name, String tel,String account) {
+    public int updateUser(String name, String tel,String account) {
         Connection connection = JDBCTools.getConnection();
         String sql = "update user set Name = ? , Tel = ? where Account = ?";
         PreparedStatement preparedStatement = null;
@@ -231,11 +232,11 @@ public class UserRepositoryImpl implements UserRepository {
         }finally {
             JDBCTools.release(connection,preparedStatement,null);
         }
-        return "更新成功";
+        return 1;
     }
 
     @Override
-    public String deleteUser(String account) {
+    public int deleteUser(String account) {
         Connection connection = JDBCTools.getConnection();
         String sql = "delete from user where Account = ?";
         PreparedStatement preparedStatement = null;
@@ -248,7 +249,7 @@ public class UserRepositoryImpl implements UserRepository {
         }finally {
             JDBCTools.release(connection,preparedStatement,null);
         }
-        return "删除成功";
+        return 1;
     }
 
 }
