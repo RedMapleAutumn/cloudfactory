@@ -11,9 +11,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>产品类别管理</title>
-    <link rel="stylesheet" href="./layui/css/layui.css">
-    <script src="./layui/layui.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <script src="../layui/layui.js"></script>
+<%--    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">--%>
+<%--    <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.6.8/layui.js"></script>--%>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <style type="text/css">
         .div3{width:450px; height:300px}
     </style>
@@ -95,7 +98,7 @@
         <div style="padding: 15px;">
             <%--            搜索框--%>
             <button id="add" class="layui-btn layui-btn-normal" >新建</button>
-            <form action="/productCategory?method=search" method="post">
+            <form action="/pcate/search" method="post">
 
                 <input type="text" name="search" size="15" style="width:100px;height:36px;">
                 <%--                <input type="submit" value="搜索">--%>
@@ -135,7 +138,7 @@
         </div>
     </div>
 </div>
-<script src="./layui/layui.js"></script>
+<script src="../layui/layui.js"></script>
 <script>
     //JS
     layui.use(['element', 'layer', 'util','form'], function(){

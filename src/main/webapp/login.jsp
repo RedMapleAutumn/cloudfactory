@@ -12,12 +12,12 @@
 </head>
 <body>
 <div id="login">
-    <form action="/login" method="post">
+    <form action="/login1" method="post">
         <table>
             <tr>
                 <td>账号:</td>
                 <td>
-                    <input type="text" name="username">
+                    <input type="text" name="account">
                 </td>
             </tr>
             <tr>

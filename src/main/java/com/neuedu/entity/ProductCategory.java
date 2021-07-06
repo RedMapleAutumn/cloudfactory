@@ -37,4 +37,13 @@ public class ProductCategory {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "ProductCategory{" +
+                "PCNO='" + PCNO + '\'' +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }

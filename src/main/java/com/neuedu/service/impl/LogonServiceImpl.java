@@ -6,15 +6,20 @@ import com.neuedu.repository.impl.FactoryRepositoryImpl;
 import com.neuedu.repository.impl.UserRepositoryImpl;
 import com.neuedu.service.LogonService;
 import com.neuedu.utils.NumberTools;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class LogonServiceImpl implements LogonService {
-    UserRepository userRepository = new UserRepositoryImpl();
-    FactoryRepository factoryRepository = new FactoryRepositoryImpl();
+    @Autowired
+    UserRepository userRepository;
+    @Autowired
+    FactoryRepository factoryRepository;
     @Override
     public String agencylogon(String account, String password, String name, String tel, String type) {
         String s = userRepository.checkAccount(account);
         String result = "";
-        if(s=="账号不重复"){
+        if(s.equals("0")){
             int res = userRepository.agencylogon(account,password,name,tel,type);
         }else{
             result = s;
@@ -30,12 +35,12 @@ public class LogonServiceImpl implements LogonService {
         String result = "";
         int res = 0;
         int result_f = 0;
-        if(s=="账号不重复"){
+        if(s.equals("0")){
             //确保工厂编号不重复
             String FNO = "";
             FNO = "FNO" + NumberTools.getNumber();
             String fno = factoryRepository.checkFNO(FNO);
-            while (fno=="编号重复"){
+            while (fno=="1"){
                 FNO = "FNO" + NumberTools.getNumber();
                 fno = factoryRepository.checkFNO(FNO);
             }

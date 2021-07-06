@@ -11,7 +11,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>云工厂管理</title>
-    <link rel="stylesheet" href="./layui/css/layui.css">
+
+<%--    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">--%>
+<%--    <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.6.8/layui.js"></script>--%>
+    <link rel="stylesheet" href="../layui/css/layui.css">
 </head>
 <%--<script type="text/javascript" src="js/jquery/jquery-1.11.1.min.js"></script>--%>
 <%--<script src="js/jquery-3.3.1.min.js"></script>--%>
@@ -89,7 +92,7 @@
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <%--            搜索框--%>
-            <form action="/cloudFactory?method=search" method="post">
+            <form action="/factory/search" method="post">
                 <input type="text" name="search" size="15" style="width:100px;height:36px;">
 <%--                <input type="submit" value="搜索">--%>
             </form>
@@ -118,11 +121,11 @@
                         <td>${factory.account}</td>
                         <c:if test="${factory.status=='1'}">
                             <td><span style="color: #1E9FFF">正常</span></td>
-                            <td><a href="/cloudFactory?method=stop&FNO=${factory.FNO}"><span style="color: red">关停</span></a></td>
+                            <td><a href="/factory/stop/${factory.FNO}"><span style="color: red">关停</span></a></td>
                         </c:if>
                         <c:if test="${factory.status!='1'}">
                             <td><span style="color: orange">关停</span></td>
-                            <td><a href="/cloudFactory?method=start&FNO=${factory.FNO}"><span style="color: #00FF00">开启</span></a></td>
+                            <td><a href="/factory/start/${factory.FNO}"><span style="color: #00FF00">开启</span></a></td>
                         </c:if>
                     </tr>
                     </tbody>
@@ -131,7 +134,7 @@
         </div>
     </div>
 </div>
-<script src="./layui/layui.js"></script>
+<script src="../layui/layui.js"></script>
 <script>
     //JS
     layui.use(['element', 'layer', 'util'], function(){

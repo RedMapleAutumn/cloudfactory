@@ -51,11 +51,11 @@
         String method = request.getParameter("method");
         if(method.equals("add")){
     %>
-        <form action="/logon?method=add" method="post">
+        <form action="/logon/add" method="post">
     <%
         }else{
     %>
-        <form action="/logon" method="post">
+        <form action="/logon/new" method="post">
     <%
         }
     %>
@@ -89,27 +89,27 @@
                 <td>联系方式:</td>
                 <td>
                     <label>
-                        <input type="text" name="tel" required="required">
+                        <input type="text" name="contact" required="required">
                     </label>
                 </td>
             </tr>
             <tr>
                 <td>注册类型:</td>
                 <td>
-                    <label><input type="radio" value="云工厂管理员" id="factory" name="type" checked="checked">云工厂</label>
-                    <label><input type="radio" value="经销商" id="agency" name="type" >经销商</label>
+                    <label><input type="radio" value="云工厂管理员" id="factory" name="role" checked="checked">云工厂</label>
+                    <label><input type="radio" value="经销商" id="agency" name="role" >经销商</label>
                 </td>
             </tr>
             <tr>
                 <td>工厂名称:</td>
                 <td>
-                    <label for="fname"></label><input type="text" id="fname" name="factoryname">
+                    <label for="fname"></label><input type="text" id="fname" name="factoryName">
                 </td>
             </tr>
             <tr>
                 <td>工厂简介:</td>
                 <td>
-                    <label for="fintro"></label><input type="text" id="fintro" name="factoryintro">
+                    <label for="fintro"></label><input type="text" id="fintro" name="factoryIntro">
                 </td>
             </tr>
             <tr>

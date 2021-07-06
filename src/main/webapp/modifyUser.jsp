@@ -11,7 +11,7 @@
     <title>修改用户信息</title>
 </head>
 <body>
-<form action="/superAdmin?method=modified" method="post" >
+<form action="/admin/modified" method="post" >
     <table>
         <tr>
             <td>账号:</td>
@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <td>真实姓名:</td>
-            <td><input value="${user.name}" name="username" ></td>
+            <td><input value="${user.name}" name="name" ></td>
         </tr>
         <tr>
             <td>电话:</td>

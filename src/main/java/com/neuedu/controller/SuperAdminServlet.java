@@ -3,6 +3,7 @@ package com.neuedu.controller;
 import com.neuedu.entity.Admin;
 import com.neuedu.service.UserMana;
 import com.neuedu.service.impl.UserManaImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebFilter;
@@ -16,6 +17,8 @@ import java.util.List;
 @WebServlet("/superAdmin")
 public class SuperAdminServlet extends HttpServlet {
     UserMana userMana = new UserManaImpl();
+//    @Autowired
+//    UserMana userMana;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String method = req.getParameter("method");

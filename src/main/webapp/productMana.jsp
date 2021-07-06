@@ -11,9 +11,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>产品管理</title>
-    <link rel="stylesheet" href="./layui/css/layui.css">
-    <script src="./layui/layui.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <script src="../layui/layui.js"></script>
+<%--    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">--%>
+<%--    <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.6.8/layui.js"></script>--%>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <style type="text/css">
         .div3{width:450px; height:600px}
     </style>
@@ -131,7 +134,7 @@
                 </c:forEach>
             </table>
             <div class="div3" id="div3" style="display: none" >
-                <form action="/product" class="layui-form" id="addProduct" method="post" lay-filter="example">
+                <form action="/product/add" class="layui-form" id="addProduct" method="post" lay-filter="example">
                     <div class="layui-form-item">
                         <label class="layui-form-label">产品名称:</label>
                         <div class="layui-input-block">
@@ -165,7 +168,7 @@
             </div>
 
             <div class="div3" id="div4" style="display: none" >
-                <form action="/product?method=modify" class="layui-form" id="addProduct2" method="post" lay-filter="example">
+                <form action="/product/modify" class="layui-form" id="addProduct2" method="post" lay-filter="example">
                     <div class="layui-form-item">
                         <label class="layui-form-label">产品名称:</label>
                         <div class="layui-input-block">
@@ -204,7 +207,8 @@
         </div>
     </div>
 </div>
-<script src="./layui/layui.js"></script>
+<script src="../layui/layui.js"></script>
+<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.6.8/layui.js"></script>--%>
 <script>
 
     //JS

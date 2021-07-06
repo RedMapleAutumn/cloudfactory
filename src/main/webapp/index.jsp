@@ -69,6 +69,7 @@
     </div>
   </div>
 </form>
+
 <button id="div">提交1</button>
 <div class="div3" id="div3">
   <form action="/productCategory" class="layui-form" id="book" method="post" lay-filter="example">

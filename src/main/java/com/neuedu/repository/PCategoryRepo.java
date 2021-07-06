@@ -1,15 +1,16 @@
 package com.neuedu.repository;
 
 import com.neuedu.entity.ProductCategory;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface PCategoryRepo {
     public List<ProductCategory> findAll();
 
-    public String checkFCNO(String PCNO);
+    public String checkFCNO(@Param("PCNO") String PCNO);
 
-    public String add(String PCNO,String name);
+    public int add(@Param("PCNO") String PCNO,@Param("name") String name);
 
-    public List<ProductCategory> findAllByName(String name);
+    public List<ProductCategory> findAllByName(@Param("name") String name);
 }

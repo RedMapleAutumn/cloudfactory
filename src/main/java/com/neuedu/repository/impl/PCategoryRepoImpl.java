@@ -62,17 +62,17 @@ public class PCategoryRepoImpl implements PCategoryRepo {
     }
 
     @Override
-    public String add(String PCNO,String name) {
+    public int add(String PCNO,String name) {
         Connection connection = JDBCTools.getConnection();
         String sql = "insert into productcategory(PCNO,PCName) values (?,?)";
         PreparedStatement preparedStatement = null;
-        String result = "";
+        int result = 0;
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,PCNO);
             preparedStatement.setString(2,name);
             preparedStatement.executeUpdate();
-            result = "插入成功";
+            result = 1;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }finally {

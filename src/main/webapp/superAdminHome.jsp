@@ -11,7 +11,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>超级管理员主页</title>
-    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+<%--    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">--%>
 </head>
 <%--<script type="text/javascript" src="js/jquery/jquery-1.11.1.min.js"></script>--%>
 <%--<script src="js/jquery-3.3.1.min.js"></script>--%>
@@ -88,8 +89,8 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
-            <form action="/superAdmin?method=search" method="post">
-                <a href="logon.jsp?method=add" class="layui-btn layui-btn-normal" >新建</a>
+            <form action="/admin/search" method="post">
+                <a href="/logon/re" class="layui-btn layui-btn-normal" >新建</a>
                 <input type="text" name="search" size="15" style="width:100px;height:36px;">
 <%--                <a href="/superAdmin?method=search&name=${search}" class="layui-btn">搜索</a>--%>
                 <input type="submit" value="搜索">
@@ -116,8 +117,8 @@
                         <td>${user.contact}</td>
                         <td>${user.role}</td>
                         <td>
-                            <a href="/superAdmin?method=modify&account=${user.account}">修改</a>
-                            <a href="/superAdmin?method=delete&account=${user.account}">删除</a>
+                            <a href="/admin/modify/${user.account}">修改</a>
+                            <a href="/admin/delete/${user.account}">删除</a>
                         </td>
                     </tr>
                     </tbody>
@@ -126,7 +127,9 @@
         </div>
     </div>
 </div>
-<script src="./layui/layui.js"></script>
+<script src="../layui/layui.js"></script>
+<%--<script src="//unpkg.com/layui@2.6.8/dist/layui.js">--%>
+<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.6.8/layui.js"></script>--%>
 <script>
     //JS
     layui.use(['element', 'layer', 'util'], function(){

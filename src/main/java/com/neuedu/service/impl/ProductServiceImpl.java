@@ -5,11 +5,15 @@ import com.neuedu.repository.ProductRepository;
 import com.neuedu.repository.impl.ProductRepositoryImpl;
 import com.neuedu.service.ProductService;
 import com.neuedu.utils.NumberTools;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ProductServiceImpl implements ProductService {
-    ProductRepository productRepository = new ProductRepositoryImpl();
+    @Autowired
+    ProductRepository productRepository ;
     @Override
     public List<Product> findAll() {
         return productRepository.findAll();
@@ -20,7 +24,7 @@ public class ProductServiceImpl implements ProductService {
         String PNO = "";
         PNO = "PNO" + NumberTools.getNumber();
         String s = productRepository.checkPNO(PNO);
-        while(s.equals("编号重复")){
+        while(s.equals("1")){
             PCNO = "PNO" + NumberTools.getNumber();
             s = productRepository.checkPNO(PNO);
         }
