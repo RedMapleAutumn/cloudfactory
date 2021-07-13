@@ -47,4 +47,11 @@ public class UserManaImpl implements UserMana {
        // sqlSession.close();
         return userRepository.deleteUser(account)+"";
     }
+
+    @Override
+    public int signUp(String account, String password, String name, String tel,
+                      String type, String factroyname, String factoryintro) {
+        int i = userRepository.signUp(account, password, name, tel, type, factroyname, factoryintro);
+        return i;
+    }
 }

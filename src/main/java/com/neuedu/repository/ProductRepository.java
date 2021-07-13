@@ -12,4 +12,14 @@ public interface ProductRepository {
 
     public int add(@Param("PNO") String PNO,@Param("name") String name,@Param("PCNO") String PCNO,
                       @Param("size") String size,@Param("des") String description);
+
+    public Product findByIPNO(@Param("PNO") String PNO);
+
+    public List<Product> findAllByName(@Param("Pname") String pname);
+
+    public int deleteByPNO(@Param("PNO") String PNO);
+
+    public int modify(@Param("PNO") String PNO,@Param("name") String name,@Param("PCNO") String PCNO,
+                      @Param("size") String size,@Param("des") String description);
+
 }

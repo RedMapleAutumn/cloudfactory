@@ -13,4 +13,8 @@ public interface PCategoryRepo {
     public int add(@Param("PCNO") String PCNO,@Param("name") String name);
 
     public List<ProductCategory> findAllByName(@Param("name") String name);
+
+    public int modifyByPCNO(@Param("PCNO") String PCNO,@Param("name") String name);
+
+    public int deleteByPCNO(@Param("PCNO") String PCNO);
 }

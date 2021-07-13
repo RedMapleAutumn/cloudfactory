@@ -252,4 +252,9 @@ public class UserRepositoryImpl implements UserRepository {
         return 1;
     }
 
+    @Override
+    public int signUp(String account, String password, String name, String tel, String type, String factroyname, String factoryintro) {
+        return 0;
+    }
+
 }

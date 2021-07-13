@@ -105,4 +105,14 @@ public class PCategoryRepoImpl implements PCategoryRepo {
         }
         return list;
     }
+
+    @Override
+    public int modifyByPCNO(String PCNO, String name) {
+        return 0;
+    }
+
+    @Override
+    public int deleteByPCNO(String PCNO) {
+        return 0;
+    }
 }

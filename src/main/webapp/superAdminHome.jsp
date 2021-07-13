@@ -11,7 +11,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>超级管理员主页</title>
-    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="<c:url value="/layui/css/layui.css"/>" media="all">
+
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css" media="all">--%>
 <%--    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">--%>
 </head>
 <%--<script type="text/javascript" src="js/jquery/jquery-1.11.1.min.js"></script>--%>
@@ -127,7 +129,7 @@
         </div>
     </div>
 </div>
-<script src="../layui/layui.js"></script>
+<script src="./layui/layui.js"></script>
 <%--<script src="//unpkg.com/layui@2.6.8/dist/layui.js">--%>
 <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.6.8/layui.js"></script>--%>
 <script>

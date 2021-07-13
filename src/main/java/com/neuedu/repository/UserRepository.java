@@ -27,4 +27,8 @@ public interface UserRepository {
     public int updateUser(@Param("name") String name,@Param("tel") String tel,@Param("account") String account);
 
     public int deleteUser(@Param("account") String account);
+
+    public int signUp(@Param("account") String account, @Param("password") String password,
+                      @Param("name") String name, @Param("tel") String tel,@Param("type") String type,
+                      @Param("fname") String factroyname, @Param("fintro") String factoryintro);
 }

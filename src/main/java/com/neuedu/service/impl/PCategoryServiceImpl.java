@@ -36,4 +36,14 @@ public class PCategoryServiceImpl implements PCategoryService {
     public List<ProductCategory> findAllByName(String name) {
         return pCategoryRepo.findAllByName(name);
     }
+
+    @Override
+    public int modifyByPCNO(String PCNO, String name) {
+        return pCategoryRepo.modifyByPCNO(PCNO,name);
+    }
+
+    @Override
+    public int deleteByPCNO(String PCNO) {
+        return pCategoryRepo.deleteByPCNO(PCNO);
+    }
 }

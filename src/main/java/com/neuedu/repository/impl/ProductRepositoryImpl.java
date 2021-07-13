@@ -84,4 +84,25 @@ public class ProductRepositoryImpl implements ProductRepository {
         }
         return 1;
     }
+
+    @Override
+    public Product findByIPNO(String PNO) {
+        return null;
+    }
+
+    @Override
+    public List<Product> findAllByName(String pname) {
+        return null;
+    }
+
+    @Override
+    public int deleteByPNO(String PNO) {
+        return 0;
+    }
+
+    @Override
+    public int modify(String PNO, String name, String PCNO, String size, String description) {
+        return 0;
+    }
+
 }

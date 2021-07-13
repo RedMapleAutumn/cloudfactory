@@ -31,4 +31,28 @@ public class ProductServiceImpl implements ProductService {
         int result = productRepository.add(PNO,name,PCNO,size,description);
         return result+"";
     }
+
+    @Override
+    public Product findByIPNO(String PNO) {
+        Product byIPNO = productRepository.findByIPNO(PNO);
+        return byIPNO;
+    }
+
+    @Override
+    public List<Product> findAllByName(String pname) {
+        List<Product> allByName = productRepository.findAllByName(pname);
+        return allByName;
+    }
+
+    @Override
+    public String deleteByPNO(String PNO) {
+        int i = productRepository.deleteByPNO(PNO);
+        return i+"";
+    }
+
+    @Override
+    public String modify(String PNO, String name, String PCNO, String size, String description) {
+        int modify = productRepository.modify(PNO, name, PCNO, size, description);
+        return modify+"";
+    }
 }

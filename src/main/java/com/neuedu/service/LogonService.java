@@ -5,4 +5,7 @@ public interface LogonService {
 
     public String factoryadminlogon(String account,String password,String name,String tel,String type,
                                     String factroyname,String factoryintro);
+
+    public int signUp(String account,  String password,String name, String tel,  String type,
+                      String factroyname,  String factoryintro);
 }
